@@ -1,218 +1,230 @@
-CREATE TABLE `pessoa` (
-  `codigo_pessoa` bigint(20) NOT NULL,
-  `nome_pessoa` varchar(255) NOT NULL,
-  `email_pessoa` varchar(255) NOT NULL,
-  `senha_pessoa` varchar(255) NOT NULL,
-  `perfil_pessoa` varchar(255) NOT NULL,
-  `data_atualizacao_pessoa` datetime NOT NULL,
-  `data_criacao_pessoa` datetime NOT NULL
+--
+--  ******* INICIO - TABELAS ********
+--
+
+CREATE TABLE TURMA (
+    `CODIGO_TURMA` BIGINT(20) NOT NULL,
+    `CODIGO_PROFESSOR_TURMA` BIGINT(20) NOT NULL,
+    `DESCRICAO_TURMA` VARCHAR(255) NOT NULL,
+    `DATA_INICIO_TURMA` DATETIME NOT NULL,
+    `DATA_FIM_TURMA` DATETIME NOT NULL,
+    `DATA_PREVISAO_EVENTO` DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `administrador` (
-  `codigo_pessoa` bigint(20) NOT NULL
+CREATE TABLE PAROQUIA (
+    `CODIGO_PAROQUIA` BIGINT(20) NOT NULL,
+    `DESRICAO_PAROQUIA` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `cliente` (
-  `codigo_pessoa` bigint(20) NOT NULL
+CREATE TABLE PARQUIA_ALUNO (
+    `CODIGO_ALUNO_PAROQUIA_ALUNO` BIGINT(20) NOT NULL,
+    `CODIGO_PAROQUIA_PAROQUIA_ALUNO` BIGINT(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `cidade` (
-  `codigo_cidade` bigint(20) NOT NULL,
-  `nome_cidade` varchar(255) NOT NULL,
-  `data_atualizacao_cidade` datetime NOT NULL,
-  `data_criacao_cidade` datetime NOT NULL
+CREATE TABLE PAROQUIA_ENDERECO (
+    `CODIGO_PAROQUIA_ENDERECO` BIGINT(20) NOT NULL,
+    `CODIGO_PAROQUIA_PAROQUIA_ENDERECO` BIGINT(20) NOT NULL,
+    `CODIGO_CIDADE_PAROQUIA_ENDERECO` BIGINT(20) NOT NULL,
+    `RUA_PAROQUIA_ENDERECO` VARCHAR(255),
+    `NUMERO_PAROQUIA_ENDERECO` VARCHAR(255),
+    `BAIRRO_PAROQUIA_ENDERECO` VARCHAR(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `bairro` (
-  `codigo_bairro` bigint(20) NOT NULL,
-  `nome_bairro` varchar(255) NOT NULL,
-  `codigo_cidade_bairro` bigint(20) NOT NULL,
-  `data_atualizacao_bairro` datetime NOT NULL,
-  `data_criacao_bairro` datetime NOT NULL
+CREATE TABLE CIDADE (
+    `CODIGO_CIDADE` BIGINT(20) NOT NULL,
+    `DESCRICAO_CIDADE` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `imovel` (
-  `codigo_imovel` bigint(20) NOT NULL,
-  `referencia_imovel` varchar(255) NOT NULL,
-  `titulo_imovel` varchar(255) NOT NULL,
-  `corretor_imovel` varchar(255) ,
-  `proprietario_imovel` varchar(255) ,
-  `descricao_imovel` varchar(255) NOT NULL,
-  `preco_imovel` bigint(20) NOT NULL,
-  `cep_imovel` varchar(255) NOT NULL,
-  `numero_imovel` varchar(255) NOT NULL,
-  `rua_imovel` varchar(255) NOT NULL,
-  `codigo_bairro_imovel` bigint(20) NOT NULL,
-  `codigo_cidade_imovel` bigint(20) NOT NULL,
-  `area_imovel` varchar(255) NOT NULL,
-  `destaque_imovel` tinyint(1) NOT NULL,
-  `status_imovel` varchar(255) NOT NULL,
-  `especificacao_imovel` varchar(255) NOT NULL,
-  `tipo_imovel` varchar(255) NOT NULL,
-  `data_atualizacao_imovel` datetime NOT NULL,
-  `data_criacao_imovel` datetime NOT NULL
+CREATE TABLE PROFESSOR (
+    `CODIGO_PROFESSOR` BIGINT(20) NOT NULL,
+    `NOME_PROFESSOR` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `galpao` (
-  `codigo_imovel` bigint(20) NOT NULL
+CREATE TABLE PROFESSOR_TELEFONE (
+    `CODIGO_PROFESSOR_TELEFONE` BIGINT(20) NOT NULL,
+    `CODIGO_PROFESSOR_PROFESSOR_TELEFONE` BIGINT(20) NOT NULL,
+    `DDD_PROFESSOR_TELEFONE` VARCHAR(255) NOT NULL,
+    `NUMERO_PROFESSOR_TELEFONE` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `casa` (
-  `codigo_imovel` bigint(20) NOT NULL,
-  `quantidade_quartos_casa` bigint(20) NOT NULL,
-  `quantidade_salas_casa` bigint(20) NOT NULL,
-  `quantidade_cozinhas_casa` bigint(20) NOT NULL,
-  `quantidade_banheiros_casa` bigint(20) NOT NULL,
-  `quantidade_garagens_casa` bigint(20) NOT NULL
+CREATE TABLE ALUNO (
+    `CODIGO_ALUNO` BIGINT(20) NOT NULL,
+    `NOME_ALUNO` VARCHAR(255) NOT NULL,
+    `STATUS_ALUNO` VARCHAR(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `apartamento` (
-  `codigo_imovel` bigint(20) NOT NULL,
-  `quantidade_quartos_apartamento` bigint(20) NOT NULL,
-  `quantidade_salas_apartamento` bigint(20) NOT NULL,
-  `quantidade_cozinhas_apartamento` bigint(20) NOT NULL,
-  `quantidade_banheiros_apartamento` bigint(20) NOT NULL,
-  `quantidade_garagens_apartamento` bigint(20) NOT NULL,
-  `preco_condominio_apartamento` bigint(20) NOT NULL
+CREATE TABLE ALUNO_TELEFONE (
+    `CODIGO_ALUNO_TELEFONE` BIGINT(20) NOT NULL,
+    `CODIGO_ALUNO_ALUNO_TELEFONE` BIGINT(20) NOT NULL,
+    `DDD_ALUNO_TELEFONE` VARCHAR(255) NOT NULL,
+    `NUMERO_ALUNO_TELEFONE` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `terreno` (
-  `codigo_imovel` bigint(20) NOT NULL,
-  `grau_inclinacao_terreno` bigint(20) NOT NULL
+CREATE TABLE ALUNO_ENDERECO (
+    `CODIGO_ALUNO_ENDERECO` BIGINT(20) NOT NULL,
+    `CODIGO_ALUNO_ALUNO_ENDERECO` BIGINT(20) NOT NULL,
+    `CODIGO_CIDADE_ALUNO_ENDERECO` BIGINT(20) NOT NULL,
+    `RUA_ALUNO_ENDERECO` VARCHAR(255),
+    `NUMERO_ALUNO_ENDERECO` VARCHAR(255),
+    `BAIRRO_ALUNO_ENDERECO` VARCHAR(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `favorito_imovel_cliente` (
-  `codigo_imovel` bigint(20) NOT NULL,
-  `codigo_pessoa` bigint(20) NOT NULL
+CREATE TABLE ALUNO_PRESENCA (
+    `CODIGO_ALUNO_PRESENCA` BIGINT(20) NOT NULL,
+    `CODIGO_ALUNO_ALUNO_PRESENCA` BIGINT(20) NOT NULL,
+    `PRESENCA_ALUNO_PRESENCA` TINYINT(1) NOT NULL,
+    `DATA_ALUNO_PRESENCA` DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE PAROQUIA_TELEFONE (
+    `CODIGO_PAROQUIA_TELEFONE` BIGINT(20) NOT NULL,
+    `CODIGO_PAROQUIA_PROFESSOR_TELEFONE` BIGINT(20) NOT NULL,
+    `DDD_PAROQUIA_TELEFONE` VARCHAR(255) NOT NULL,
+    `NUMERO_PAROQUIA_TELEFONE` VARCHAR(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE ADMINISTRADOR (
+    `CODIGO_ADMINISTRADOR` BIGINT(20) NOT NULL,
+    `NOME_ADMINISTRADOR` VARCHAR(255) NOT NULL,
+    `EMAIL_ADMINISTRADOR` VARCHAR(255) NOT NULL,
+    `SENHA_ADMINISTRADOR` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Indexes for table `pessoa`
+--  ******* FIM - TABELAS ********
 --
 
-ALTER TABLE `favorito_imovel_cliente`
-  ADD PRIMARY KEY (`codigo_imovel`, `codigo_pessoa`);
 
 --
--- Indexes for table `imovel`
+--  ******* INICIO - CHAVES PRIMÁRIAS ********
 --
 
-ALTER TABLE `imovel`
-  ADD PRIMARY KEY (`codigo_imovel`);
+ALTER TABLE `TURMA`
+  ADD PRIMARY KEY (`CODIGO_TURMA`);
 
-ALTER TABLE `galpao`
-  ADD PRIMARY KEY (`codigo_imovel`);
+ALTER TABLE `PAROQUIA`
+  ADD PRIMARY KEY (`CODIGO_PAROQUIA`);
 
-ALTER TABLE `casa`
-  ADD PRIMARY KEY (`codigo_imovel`);
+ALTER TABLE `ALUNO`
+  ADD PRIMARY KEY (`CODIGO_ALUNO`);
 
-ALTER TABLE `apartamento`
-  ADD PRIMARY KEY (`codigo_imovel`);
+ALTER TABLE `PAROQUIA_ENDERECO`
+  ADD PRIMARY KEY (`CODIGO_PAROQUIA_ENDERECO`);
 
-ALTER TABLE `terreno`
-  ADD PRIMARY KEY (`codigo_imovel`);
+ALTER TABLE `CIDADE`
+  ADD PRIMARY KEY (`CODIGO_CIDADE`);
 
-ALTER TABLE `cidade`
-  ADD PRIMARY KEY (`codigo_cidade`);
+ALTER TABLE `PROFESSOR`
+  ADD PRIMARY KEY (`CODIGO_PROFESSOR`);
 
-ALTER TABLE `bairro`
-  ADD PRIMARY KEY (`codigo_bairro`);
+ALTER TABLE `PROFESSOR_TELEFONE`
+  ADD PRIMARY KEY (`CODIGO_PROFESSOR_TELEFONE`);
 
+ALTER TABLE `ALUNO_TELEFONE`
+  ADD PRIMARY KEY (`CODIGO_ALUNO_TELEFONE`);
+
+ALTER TABLE `ALUNO_ENDERECO`
+  ADD PRIMARY KEY (`CODIGO_ALUNO_ENDERECO`);
+  
+ALTER TABLE `ALUNO_PRESENCA`
+  ADD PRIMARY KEY (`CODIGO_ALUNO_PRESENCA`);
+
+ALTER TABLE `PAROQUIA_TELEFONE`
+  ADD PRIMARY KEY (`CODIGO_PAROQUIA_TELEFONE`);
+
+ALTER TABLE `ADMINISTRADOR`
+  ADD PRIMARY KEY (`CODIGO_ADMINISTRADOR`);
+--
+--  ******* FIM - CHAVES PRIMÁRIAS ********
 --
 
-ALTER TABLE `pessoa`
-  ADD PRIMARY KEY (`codigo_pessoa`);
-
-ALTER TABLE `administrador`
-  ADD PRIMARY KEY (`codigo_pessoa`);
-
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`codigo_pessoa`);
-
+--
+--  ******* AUTO INCREMENTO NAS - CHAVES PRIMÁRIAS ********
 --
 
-ALTER TABLE `favorito_imovel_cliente`
-  ADD KEY `FK4cm1kg523jlopyexjbmi6y54b` (`codigo_imovel`);
+ALTER TABLE `TURMA`
+  MODIFY `CODIGO_TURMA` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `favorito_imovel_cliente`
-  ADD KEY `FK4cm1kg523jlopyexjbmi6y54a` (`codigo_pessoa`);
+ALTER TABLE `PAROQUIA`
+  MODIFY `CODIGO_PAROQUIA` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `casa`
-  ADD KEY `FK4cm1kg523jlopyexjbmi6y53a` (`codigo_imovel`);
+ALTER TABLE `ALUNO`
+  MODIFY `CODIGO_ALUNO` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `apartamento`
-  ADD KEY `FK4cm1kg523jlopyexjbmi6y53b` (`codigo_imovel`);
+ALTER TABLE `PAROQUIA_ENDERECO`
+  MODIFY `CODIGO_PAROQUIA_ENDERECO` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `galpao`
-  ADD KEY `FK4cm1kg523jlopyexjbmi6y53c` (`codigo_imovel`);
+ALTER TABLE `CIDADE`
+  MODIFY `CODIGO_CIDADE` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `terreno`
-  ADD KEY `FK4cm1kg523jlopyexjbmi6y53d` (`codigo_imovel`);
+ALTER TABLE `PROFESSOR`
+  MODIFY `CODIGO_PROFESSOR` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `administrador`
-  ADD KEY `FK4cm1kg523jlopyexttmi6y54a` (`codigo_pessoa`);
+ALTER TABLE `PROFESSOR_TELEFONE`
+  MODIFY `CODIGO_PROFESSOR_TELEFONE` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `cliente`
-  ADD KEY `FK4cm1kg523jlopyzajbmi6y54a` (`codigo_pessoa`);
+ALTER TABLE `ALUNO_TELEFONE`
+  MODIFY `CODIGO_ALUNO_TELEFONE` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `cidade`
-  ADD KEY `FK4cm1kg523654pyexjbmi6y53d` (`codigo_cidade`);
+ALTER TABLE `ALUNO_ENDERECO`
+  MODIFY `CODIGO_ALUNO_ENDERECO` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `bairro`
-  ADD KEY `FK4cm1kg523jl681exjbmi6y53d` (`codigo_bairro`);
+ALTER TABLE `ALUNO_PRESENCA`
+  MODIFY `CODIGO_ALUNO_PRESENCA` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `bairro`
-  ADD KEY `FK4cm1kg523jl681exzzmi6y53d` (`codigo_cidade_bairro`);
+ALTER TABLE `PAROQUIA_TELEFONE`
+  MODIFY `CODIGO_PAROQUIA_TELEFONE` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
--- AUTO_INCREMENT for table `imovel`
---
-ALTER TABLE `imovel`
-  MODIFY `codigo_imovel` bigint(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `ADMINISTRADOR`
+  MODIFY `CODIGO_ADMINISTRADOR` BIGINT(20) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+--  ******* INICIO - CHAVES ESTRANGEIRAS ********
 --
 
-ALTER TABLE `pessoa`
-  MODIFY `codigo_pessoa` bigint(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `TURMA`
+  ADD FOREIGN KEY (`CODIGO_PROFESSOR_TURMA`) REFERENCES `PROFESSOR` (`CODIGO_PROFESSOR`);
 
-ALTER TABLE `cidade`
-  MODIFY `codigo_cidade` bigint(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `PARQUIA_ALUNO`
+  ADD FOREIGN KEY (`CODIGO_ALUNO_PAROQUIA_ALUNO`) REFERENCES `ALUNO` (`CODIGO_ALUNO`);
 
-ALTER TABLE `bairro`
-  MODIFY `codigo_bairro` bigint(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `PARQUIA_ALUNO`
+  ADD FOREIGN KEY (`CODIGO_PAROQUIA_PAROQUIA_ALUNO`) REFERENCES `PAROQUIA` (`CODIGO_PAROQUIA`);
 
--- Constraints for table `imoveis`
+ALTER TABLE `ALUNO_PRESENCA`
+  ADD FOREIGN KEY (`CODIGO_ALUNO_ALUNO_PRESENCA`) REFERENCES `ALUNO` (`CODIGO_ALUNO`);
 
-ALTER TABLE `casa`
-  ADD CONSTRAINT `FK4cm1kg523jlopyexjbmi6y53a` FOREIGN KEY (`codigo_imovel`) REFERENCES `imovel` (`codigo_imovel`);
+ALTER TABLE `PAROQUIA_ENDERECO`
+  ADD FOREIGN KEY (`CODIGO_PAROQUIA_PAROQUIA_ENDERECO`) REFERENCES `PAROQUIA` (`CODIGO_PAROQUIA`);
 
-ALTER TABLE `apartamento`
-  ADD CONSTRAINT `FK4cm1kg523jlopyexjbmi6y53b` FOREIGN KEY (`codigo_imovel`) REFERENCES `imovel` (`codigo_imovel`);
+ALTER TABLE `PAROQUIA_ENDERECO`
+  ADD FOREIGN KEY (`CODIGO_CIDADE_PAROQUIA_ENDERECO`) REFERENCES `CIDADE` (`CODIGO_CIDADE`);
+  
+ALTER TABLE `PROFESSOR_TELEFONE`
+  ADD FOREIGN KEY (`CODIGO_PROFESSOR_PROFESSOR_TELEFONE`) REFERENCES `PROFESSOR` (`CODIGO_PROFESSOR`);
+  
+ALTER TABLE `ALUNO_TELEFONE`
+  ADD FOREIGN KEY (`CODIGO_ALUNO_ALUNO_TELEFONE`) REFERENCES `ALUNO` (`CODIGO_ALUNO`);
 
-ALTER TABLE `galpao`
-  ADD CONSTRAINT `FK4cm1kg523jlopyexjbmi6y53c` FOREIGN KEY (`codigo_imovel`) REFERENCES `imovel` (`codigo_imovel`);
+ALTER TABLE `ALUNO_ENDERECO`
+  ADD FOREIGN KEY (`CODIGO_ALUNO_ALUNO_ENDERECO`) REFERENCES `ALUNO` (`CODIGO_ALUNO`);
+  
+ALTER TABLE `ALUNO_ENDERECO`
+  ADD FOREIGN KEY (`CODIGO_CIDADE_ALUNO_ENDERECO`) REFERENCES `CIDADE` (`CODIGO_CIDADE`);
 
-ALTER TABLE `terreno`
-  ADD CONSTRAINT `FK4cm1kg523jlopyexjbmi6y53d` FOREIGN KEY (`codigo_imovel`) REFERENCES `imovel` (`codigo_imovel`);
+--
+--  ******* FIM - CHAVES ESTRANGEIRAS ********
+--
 
-ALTER TABLE `favorito_imovel_cliente`
-  ADD CONSTRAINT `FK4cm1kg523jlopyexjbmi6y54b` FOREIGN KEY (`codigo_imovel`) REFERENCES `imovel` (`codigo_imovel`);
+--
+--  ******* INICIO - REGISTROS ********
+--
 
-ALTER TABLE `favorito_imovel_cliente`
-  ADD CONSTRAINT `FK4cm1kg523jlopyexjbmi6y54a` FOREIGN KEY (`codigo_pessoa`) REFERENCES `cliente` (`codigo_pessoa`);
+INSERT INTO `pessoa` (`CODIGO_ADMINISTRADOR`, `NOME_ADMINISTRADOR`, `EMAIL_ADMINISTRADOR`, `SENHA_ADMINISTRADOR`,
+`PERFIL_ADMINISTRADOR`) 
+VALUES (NULL, 'Sérgio Mendonça', 'admin@igreja.com.br', 
+'$2a$06$xIvBeNRfS65L1N17I7JzgefzxEuLAL0Xk0wFAgIkoNqu9WD6rmp4m', 'ROLE_ADMIN');
 
-ALTER TABLE `administrador`
-  ADD CONSTRAINT `FK4cm1kg523jlopyexttmi6y54a` FOREIGN KEY (`codigo_pessoa`) REFERENCES `pessoa` (`codigo_pessoa`);
-
-  ALTER TABLE `cliente`
-  ADD CONSTRAINT `FK4cm1kg523jlopyzajbmi6y54a` FOREIGN KEY (`codigo_pessoa`) REFERENCES `pessoa` (`codigo_pessoa`);
-
-ALTER TABLE `imovel`
-  ADD CONSTRAINT `FK4cm1kg523654pyexjbmi6y53d` FOREIGN KEY (`codigo_cidade_imovel`) REFERENCES `cidade` (`codigo_cidade`);
-
-ALTER TABLE `imovel`
-  ADD CONSTRAINT `FK4cm1kg523jl681exjbmi6y53d` FOREIGN KEY (`codigo_bairro_imovel`) REFERENCES `bairro` (`codigo_bairro`);
-
-ALTER TABLE `bairro`
-  ADD CONSTRAINT `FK4cm1kg523jl681exzzmi6y53d` FOREIGN KEY (`codigo_cidade_bairro`) REFERENCES `cidade` (`codigo_cidade`);
+--
+--  ******* FIM - REGISTROS ********
+--

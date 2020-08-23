@@ -1,6 +1,7 @@
 package br.com.igreja.api.enums;
 
 public enum StatusEnum {
-	ATIVO,
-	INATIVO
+	CURSANDO,
+	APROVADO,
+	REPROVADO
 }

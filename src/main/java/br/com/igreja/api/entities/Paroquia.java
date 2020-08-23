@@ -1,7 +1,6 @@
 package br.com.igreja.api.entities;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,8 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Length;
@@ -21,20 +18,24 @@ import org.hibernate.validator.constraints.NotEmpty;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-@Table(name = "CIDADE")
-public class Cidade implements Serializable {
-
-	private static final long serialVersionUID = -5754246207015212528L;
-
+@Table(name="PAROQUIA")
+public class Paroquia implements Serializable{
+	
+	private static final long serialVersionUID = -3242341207055512512L;;
+	
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="CODIGO_CIDADE")
+	@Column(name="CODIGO_PAROQUIA")
 	private Long codigo;
-
-	@NotEmpty(message = "A descrição da cidade não pode ser vazio.")
-	@Length(min = 3, max = 200, message = "A descrição da cidade deve conter entre 3 e 200 caracteres.")
-	@Column(name = "DESCRICAO_CIDADE", nullable = false)
+	
+	@NotEmpty(message = "Descricao da paroquia não pode ser vazio.")
+	@Length(min = 3, max = 200, message = "Descricao da paroquia deve conter entre 3 e 200 caracteres.")
+	@Column(name = "DESRICAO_PAROQUIA", nullable = false)
 	private String descricao;
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy="paroquia", cascade = CascadeType.ALL)
+	private List<ParoquiaTelefone> telefones;
 
 	public Long getCodigo() {
 		return codigo;
@@ -52,8 +53,17 @@ public class Cidade implements Serializable {
 		this.descricao = descricao;
 	}
 
+	public List<ParoquiaTelefone> getTelefones() {
+		return telefones;
+	}
+
+	public void setTelefones(List<ParoquiaTelefone> telefones) {
+		this.telefones = telefones;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
+
 }
