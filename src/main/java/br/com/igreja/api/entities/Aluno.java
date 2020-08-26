@@ -43,8 +43,12 @@ public class Aluno implements Serializable{
 	private StatusEnum status;
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy="aluno", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="aluno", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<AlunoTelefone> telefones;
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy="aluno", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<AlunoEndereco> enderecos;
 	
 	@PrePersist
     public void prePersist() {

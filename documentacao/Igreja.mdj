@@ -1227,7 +1227,7 @@
 											"top": 239,
 											"width": 249.58984375,
 											"height": 13,
-											"text": "ENDERECO_ALUNO"
+											"text": "ALUNO_ENDERECO"
 										},
 										{
 											"_type": "LabelView",
@@ -1299,7 +1299,7 @@
 											"top": 262,
 											"width": 249.58984375,
 											"height": 13,
-											"text": "+CODIGO_ENDERECO_ALUNO",
+											"text": "+CODIGO_ALUNO_ENDERECO",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1316,7 +1316,7 @@
 											"top": 277,
 											"width": 249.58984375,
 											"height": 13,
-											"text": "+CODIGO_ALUNO_ENDERECO",
+											"text": "+CODIGO_ALUNO_ALUNO_ENDERECO",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1333,7 +1333,7 @@
 											"top": 292,
 											"width": 249.58984375,
 											"height": 13,
-											"text": "+RUA_ENDERECO_ALUNO",
+											"text": "+RUA_ALUNO_ENDERECO",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1350,7 +1350,7 @@
 											"top": 307,
 											"width": 249.58984375,
 											"height": 13,
-											"text": "+BAIRRO_ENDERECO_ALUNO",
+											"text": "+BAIRRO_ALUNO_ENDERECO",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1402,7 +1402,7 @@
 											"top": 337,
 											"width": 249.58984375,
 											"height": 13,
-											"text": "+NUMERO_ENDERECO_ALUNO",
+											"text": "+NUMERO_ALUNO_ENDERECO",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1419,7 +1419,7 @@
 											"top": 352,
 											"width": 249.58984375,
 											"height": 13,
-											"text": "+CODIGO_CIDADE_ENDERECO_ALUNO",
+											"text": "+CODIGO_CIDADE_ALUNO_ENDERECO",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4469,7 +4469,7 @@
 											"top": 463,
 											"width": 272.46044921875,
 											"height": 13,
-											"text": "ENDERECO_PAROQUIA"
+											"text": "PAROQUIA_ENDERECO"
 										},
 										{
 											"_type": "LabelView",
@@ -4541,7 +4541,7 @@
 											"top": 486,
 											"width": 272.46044921875,
 											"height": 13,
-											"text": "+CODIGO_ENDERECO_PAROQUIA",
+											"text": "+CODIGO_PAROQUIA_ENDERECO",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4558,7 +4558,7 @@
 											"top": 501,
 											"width": 272.46044921875,
 											"height": 13,
-											"text": "+RUA_ENDERECO_PAROQUIA",
+											"text": "+RUA_PAROQUIA_ENDERECO",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4575,7 +4575,7 @@
 											"top": 516,
 											"width": 272.46044921875,
 											"height": 13,
-											"text": "+BAIRRO_ENDERECO_PAROQUIA",
+											"text": "+BAIRRO_PAROQUIA_ENDERECO",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4592,7 +4592,7 @@
 											"top": 531,
 											"width": 272.46044921875,
 											"height": 13,
-											"text": "+CIDADE_ENDERECO_PAROQUIA",
+											"text": "+CODIGO_CIDADE_PAROQUIA_ENDERECO",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4609,7 +4609,7 @@
 											"top": 546,
 											"width": 272.46044921875,
 											"height": 13,
-											"text": "+NUMERO_ENDERECO_PAROQUIA",
+											"text": "+NUMERO_PAROQUIA_ENDERECO",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6974,7 +6974,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HDDt6d9o3U="
 							},
-							"name": "CODIGO_ALUNO_TELEFONE"
+							"name": "CODIGO_ALUNO_TELEFONE",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -6982,7 +6983,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HDDt6d9o3U="
 							},
-							"name": "DDD_ALUNO_TELEFONE"
+							"name": "DDD_ALUNO_TELEFONE",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -6990,7 +6992,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HDDt6d9o3U="
 							},
-							"name": "CODIGO_ALUNO_ALUNO_TELEFONE"
+							"name": "CODIGO_ALUNO_ALUNO_TELEFONE",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7016,7 +7019,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HDDt6d9o3U="
 							},
-							"name": "NUMERO_ALUNO_TELEFONE"
+							"name": "NUMERO_ALUNO_TELEFONE",
+							"type": ""
 						}
 					]
 				},
@@ -7026,7 +7030,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "ENDERECO_ALUNO",
+					"name": "ALUNO_ENDERECO",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -7065,8 +7069,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HD17KenaSs="
 							},
-							"name": "CODIGO_ENDERECO_ALUNO",
-							"type": ""
+							"name": "CODIGO_ALUNO_ENDERECO"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7074,8 +7077,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HD17KenaSs="
 							},
-							"name": "CODIGO_ALUNO_ENDERECO",
-							"type": ""
+							"name": "CODIGO_ALUNO_ALUNO_ENDERECO"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7083,8 +7085,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HD17KenaSs="
 							},
-							"name": "RUA_ENDERECO_ALUNO",
-							"type": ""
+							"name": "RUA_ALUNO_ENDERECO"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7092,8 +7093,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HD17KenaSs="
 							},
-							"name": "BAIRRO_ENDERECO_ALUNO",
-							"type": ""
+							"name": "BAIRRO_ALUNO_ENDERECO"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7119,8 +7119,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HD17KenaSs="
 							},
-							"name": "NUMERO_ENDERECO_ALUNO",
-							"type": ""
+							"name": "NUMERO_ALUNO_ENDERECO"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7128,8 +7127,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HD17KenaSs="
 							},
-							"name": "CODIGO_CIDADE_ENDERECO_ALUNO",
-							"type": ""
+							"name": "CODIGO_CIDADE_ALUNO_ENDERECO"
 						}
 					]
 				},
@@ -7214,7 +7212,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6HPcZKhZWiQ="
 							},
-							"name": "NOME_PROFESSOR"
+							"name": "NOME_PROFESSOR",
+							"type": ""
 						}
 					]
 				},
@@ -7373,7 +7372,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6H0rn/xYKHE="
 							},
-							"name": "CODIGO_PAROQUIA_TELEFONE"
+							"name": "CODIGO_PAROQUIA_TELEFONE",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7381,7 +7381,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6H0rn/xYKHE="
 							},
-							"name": "DDD_PAROQUIA_TELEFONE"
+							"name": "DDD_PAROQUIA_TELEFONE",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7389,7 +7390,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6H0rn/xYKHE="
 							},
-							"name": "NUMERO_PAROQUIA_TELEFONE"
+							"name": "NUMERO_PAROQUIA_TELEFONE",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7397,7 +7399,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6H0rn/xYKHE="
 							},
-							"name": "CODIGO_PAROQUIA_PROFESSOR_TELEFONE"
+							"name": "CODIGO_PAROQUIA_PROFESSOR_TELEFONE",
+							"type": ""
 						}
 					]
 				},
@@ -7407,7 +7410,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "ENDERECO_PAROQUIA",
+					"name": "PAROQUIA_ENDERECO",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -7446,8 +7449,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6H88QQSp+Gc="
 							},
-							"name": "CODIGO_ENDERECO_PAROQUIA",
-							"type": ""
+							"name": "CODIGO_PAROQUIA_ENDERECO"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7455,8 +7457,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6H88QQSp+Gc="
 							},
-							"name": "RUA_ENDERECO_PAROQUIA",
-							"type": ""
+							"name": "RUA_PAROQUIA_ENDERECO"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7464,8 +7465,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6H88QQSp+Gc="
 							},
-							"name": "BAIRRO_ENDERECO_PAROQUIA",
-							"type": ""
+							"name": "BAIRRO_PAROQUIA_ENDERECO"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7473,8 +7473,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6H88QQSp+Gc="
 							},
-							"name": "CIDADE_ENDERECO_PAROQUIA",
-							"type": ""
+							"name": "CODIGO_CIDADE_PAROQUIA_ENDERECO"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7482,8 +7481,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFz6H88QQSp+Gc="
 							},
-							"name": "NUMERO_ENDERECO_PAROQUIA",
-							"type": ""
+							"name": "NUMERO_PAROQUIA_ENDERECO"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7584,7 +7582,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF0HHEyYl26l5I="
 							},
-							"name": "CODIGO_ADMINISTRADOR"
+							"name": "CODIGO_ADMINISTRADOR",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7592,7 +7591,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF0HHEyYl26l5I="
 							},
-							"name": "EMAIL_ADMINISTRADOR"
+							"name": "EMAIL_ADMINISTRADOR",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7600,7 +7600,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF0HHEyYl26l5I="
 							},
-							"name": "SENHA_ADMINISTRADOR"
+							"name": "SENHA_ADMINISTRADOR",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7608,7 +7609,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF0HHEyYl26l5I="
 							},
-							"name": "NOME_ADMINISTRADOR"
+							"name": "NOME_ADMINISTRADOR",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7616,7 +7618,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF0HHEyYl26l5I="
 							},
-							"name": "PERFIL_ADMINISTRADOR"
+							"name": "PERFIL_ADMINISTRADOR",
+							"type": ""
 						}
 					]
 				}

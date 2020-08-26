@@ -31,7 +31,7 @@ public class Professor implements Serializable{
 	public Long getCodigo() {
 		return codigo;
 	}
-
+   
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
